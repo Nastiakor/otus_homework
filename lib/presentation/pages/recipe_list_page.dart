@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/bottom_navigation_bar.dart';
 import '../widgets/recipe_card.dart';
 
 class RecipeListPage extends StatelessWidget {
@@ -56,18 +57,24 @@ class RecipeListPage extends StatelessWidget {
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(2.0),
-        child: ListView(
-          children: List.generate(recipes.length, (index) {
-            final recipe = recipes[index];
-            return RecipeCardItem(
-              image: recipe.image,
-              recipeTitle: recipe.recipeTitle,
-              prepTime: recipe.prepTime,
-              timeIcon: recipe.timeIcon,
-            );
-          }),
+        child: NotificationListener<OverscrollIndicatorNotification>(
+          onNotification: (notification) {
+            return true;
+          },
+          child: ListView(
+            children: List.generate(recipes.length, (index) {
+              final recipe = recipes[index];
+              return RecipeCardItem(
+                image: recipe.image,
+                recipeTitle: recipe.recipeTitle,
+                prepTime: recipe.prepTime,
+                timeIcon: recipe.timeIcon,
+              );
+            }),
+          ),
         ),
       ),
+      bottomNavigationBar: const MyBottomNavigationBar(currentIndex: 0),
     );
   }
 }

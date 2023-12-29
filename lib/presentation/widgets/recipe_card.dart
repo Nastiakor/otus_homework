@@ -18,17 +18,24 @@ class RecipeCardItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
+        color: const Color(0xFFFFFFFF),
         child: Row(
           children: [
             Image.asset(image, width: 149, height: 136),
             Expanded(
               child: ListTile(
-                title: Text(recipeTitle, style: Theme.of(context).textTheme.bodyLarge),
+                title: Text(
+                    recipeTitle,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodyLarge),
                 subtitle: Row(
                   children: [
+                    const SizedBox(height: 50),
                     Image.asset(timeIcon, width: 16, height: 16),
-                    const SizedBox(width: 4),
-                    Text(prepTime, style: Theme.of(context).textTheme.bodyMedium),
+                    const SizedBox(width: 10),
+                    Text(prepTime,
+                        style: Theme.of(context).textTheme.bodyMedium),
                   ],
                 ),
               ),

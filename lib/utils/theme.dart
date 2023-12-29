@@ -14,5 +14,10 @@ final ThemeData appThemeData = ThemeData(
       fontSize: 16,
       color: const Color(0xFF2ECC71),
     ),
+    bodySmall: GoogleFonts.roboto(
+      fontWeight: FontWeight.w400,
+      fontSize: 10,
+      color: const Color(0xFF2ECC71),
+    ),
   ),
 );
