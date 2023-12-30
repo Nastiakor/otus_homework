@@ -1,16 +1,5 @@
 # flutter_homework
 
-A new Flutter project.
+<img src="https://github.com/Nastiakor/otus_homework/assets/114946987/cc407f73-f705-4179-b723-4652b718f6ef" width="200"> 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/Nastiakor/otus_homework/assets/114946987/9e09dad7-6fd6-4879-900e-fdfdbce53272" width="200"> 
