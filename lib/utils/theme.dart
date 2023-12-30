@@ -8,6 +8,7 @@ final ThemeData appThemeData = ThemeData(
       fontWeight: FontWeight.w500,
       fontSize: 22,
       color: const Color(0xFF000000),
+      height: 1.2,
     ),
     bodyMedium: GoogleFonts.roboto(
       fontWeight: FontWeight.w400,
