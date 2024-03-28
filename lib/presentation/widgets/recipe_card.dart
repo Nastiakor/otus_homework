@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_homework/presentation/widgets/recipe_step.dart';
+import 'package:flutter_homework/theme/theme.dart';
 
 class RecipeCardItem extends StatelessWidget {
   final String image;
+  final String detailImage;
   final String recipeTitle;
   final String timeIcon;
   final String prepTime;
+  final List<MapEntry<String, String>> ingredients;
+  final List<RecipeStep> steps;
 
   const RecipeCardItem({
     required this.image,
+    required this.detailImage,
     required this.recipeTitle,
-    required this.prepTime,
     required this.timeIcon,
+    required this.prepTime,
+    required this.ingredients,
+    required this.steps,
     super.key,
   });
 
@@ -22,13 +30,7 @@ class RecipeCardItem extends StatelessWidget {
         color: const Color(0xFFFFFFFF),
         child: Row(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(5),
-                bottomLeft: Radius.circular(5),
-              ),
-              child: Image.asset(image, width: 149, height: 136),
-            ),
+            Image.asset(image, width: 149, height: 136),
             Expanded(
               child: Container(
                 child: Align(
@@ -38,7 +40,7 @@ class RecipeCardItem extends StatelessWidget {
                       recipeTitle,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.bodyLarge,
+                      style: AppTheme.textTheme.bodyLarge,
                     ),
                     subtitle: Padding(
                       padding: const EdgeInsets.only(top: 15.0),
@@ -48,7 +50,7 @@ class RecipeCardItem extends StatelessWidget {
                           const SizedBox(width: 10),
                           Text(
                             prepTime,
-                            style: Theme.of(context).textTheme.bodyMedium,
+                            style: AppTheme.textTheme.bodyMedium,
                           ),
                         ],
                       ),

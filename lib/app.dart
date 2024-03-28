@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../presentation/pages/recipe_list_page.dart';
-import '../utils/theme.dart';
+import 'package:flutter_homework/presentation/routes/routes.dart';
+import 'package:flutter_homework/theme/theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,8 +9,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: appThemeData,
-      home: RecipeListPage(title: 'home'),
+      routes: appRoutes,
+      theme: AppTheme.theme,
     );
   }
 }
