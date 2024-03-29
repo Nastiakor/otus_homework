@@ -14,7 +14,20 @@ class RecipeDetailPage extends StatefulWidget {
 }
 
 class _RecipeDetailPageState extends State<RecipeDetailPage> {
-  bool isButtonPressed = false;
+  bool isFavourite = false;
+  late TextEditingController _commentController = TextEditingController();
+  final List<String> comments = [];
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _commentController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +47,25 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(widget.recipeCardItem.recipeTitle,
-                      style: AppTheme.textTheme.titleLarge),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(widget.recipeCardItem.recipeTitle,
+                            style: AppTheme.textTheme.titleLarge),
+                      ),
+                      SizedBox(width: MediaQuery.of(context).size.width / 6),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isFavourite = !isFavourite;
+                          });
+                        },
+                        child: Image.asset(isFavourite
+                            ? 'assets/images/red_heart.png'
+                            : 'assets/images/black_heart.png'),
+                      ),
+                    ],
+                  ),
                   SizedBox(height: 10),
                   Row(
                     children: [
@@ -193,6 +223,70 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
                     ),
                   ),
                 ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Divider(),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: ListView.builder(
+              itemCount: comments.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(
+                    comments[index],
+                    style: AppTheme.textTheme.bodyMedium
+                        ?.copyWith(color: Colors.black),
+                  ),
+                );
+              },
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: TextField(
+                controller: _commentController,
+                style: AppTheme.textTheme.bodyMedium
+                    ?.copyWith(color: Colors.black),
+                onSubmitted: (value) {
+                  if (value.trim().isNotEmpty) {
+                    setState(() {
+                      comments.add(value.trim());
+                      _commentController.clear();
+                    });
+                  }
+                },
+                decoration: InputDecoration(
+                  hintText: 'оставить комментарий',
+                  hintStyle: AppTheme.textTheme.titleSmall
+                      ?.copyWith(color: AppTheme.mediumGreyColor),
+                  contentPadding: EdgeInsets.all(15.0),
+                  border: InputBorder.none,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppTheme.darkGreenColor,
+                      width: 2,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: AppTheme.darkGreenColor, width: 2),
+                  ),
+                  suffixIcon: Image.asset('assets/images/comment.png'),
+                ),
               ),
             ),
           ),

@@ -17,8 +17,6 @@ class RecipeDetailPageActivated extends RecipeDetailPage {
 }
 
 class _RecipeDetailPageActivatedState extends State<RecipeDetailPageActivated> {
-  bool isButtonPressed = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
