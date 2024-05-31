@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:flutter_homework/presentation/pages/recipe_detail_page_activated.dart';
 import 'package:flutter_homework/presentation/widgets/recipe_card.dart';
@@ -203,11 +204,13 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(
+                      */
+/*Navigator.pushNamed(
                           context, RecipeDetailPageActivated.route,
                           arguments: {
                             'recipeCardItem': widget.recipeCardItem,
-                          });
+                          });*//*
+
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppTheme.darkGreenColor,
@@ -295,3 +298,4 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
     );
   }
 }
+*/

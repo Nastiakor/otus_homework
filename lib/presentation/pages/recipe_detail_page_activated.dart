@@ -1,5 +1,6 @@
-import 'package:flutter_homework/presentation/pages/recipe_detail_page.dart';
+/*
 import 'package:flutter/material.dart';
+import 'package:flutter_homework/presentation/pages/recipe_detail_page_api.dart';
 import 'package:flutter_homework/presentation/pages/recipe_list_page.dart';
 import 'package:flutter_homework/presentation/widgets/recipe_card.dart';
 import '../../theme/theme.dart';
@@ -241,3 +242,4 @@ class _RecipeDetailPageActivatedState extends State<RecipeDetailPageActivated> {
     );
   }
 }
+*/

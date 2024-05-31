@@ -1,0 +1,10 @@
+const String apiBaseUrl = "https://foodapi.dzolotov.tech";
+const String apiGetRecipeUrl = "https://foodapi.dzolotov.tech/recipe";
+const String apiGetRecipeIngredientUrl = "https://foodapi.dzolotov.tech/recipe_ingredient";
+const String apiGetIngredientUrl = "https://foodapi.dzolotov.tech/ingredient";
+const String apiGetMeasureUnitUrl = "https://foodapi.dzolotov.tech/measure_unit";
+const String apiGetCookingStepLinkUrl = "https://foodapi.dzolotov.tech/recipe_step_link";
+const String apiGetCookingStepUrl = "https://foodapi.dzolotov.tech/recipe_step";
+const String apiGetCommentUrl = "https://foodapi.dzolotov.tech/comment";
+const String apiPostCommentUrl = "https://foodapi.dzolotov.tech/comment";
+const String apiGetUserUrl = "https://foodapi.dzolotov.tech/user/";
